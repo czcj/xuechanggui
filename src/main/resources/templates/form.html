@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="assets/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/jquery.min.js"></script>
+
+</head>
+
+<body data-type="widgets">
+    <script src="assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <div class="am-fl tpl-header-logo">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+                </span>
+                </div>
+            </div>
+        </header>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-link">
+                    <a href="index.html">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="tables.html">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="form.html"  class="active">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
+
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="chart.html">
+                        <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+
+            <div class="row-content am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-body am-fl">
+                                <form class="am-form tpl-form-line-form" action="/xcg/add">
+                                    <div class="am-form-group">
+                                        <label for="bxb" class="am-u-sm-3 am-form-label">白细胞 </label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="bxb" name="bxb" placeholder="请输入白细胞数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="hxb" class="am-u-sm-3 am-form-label">红细胞 </label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="hxb" name="hxb" placeholder="请输入红细胞数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="xhdb" class="am-u-sm-3 am-form-label">血红蛋白 </label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="xhdb" name="xhdb" placeholder="请输入血红蛋白数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="xxb" class="am-u-sm-3 am-form-label">血小板 </label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="xxb" name="xxb" placeholder="请输入血小板数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="zxjdz" class="am-u-sm-3 am-form-label">中性绝对值</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="zxjdz" name="zxjdz" placeholder="请输入中性绝对值">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="lbjdz" class="am-u-sm-3 am-form-label">淋巴绝对值 </label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="lbjdz" name="lbjdz" placeholder="请输入淋巴绝对值">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="crdate" class="am-u-sm-3 am-form-label">血常规时间 </label>
+                                        <div class="am-u-sm-9">
+                                            <input id="crdate" name="createDate" type="text" class="am-form-field" placeholder="日历组件" data-am-datepicker readonly required />
+                                        </div>
+                                    </div>
+                                     <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="widget-body am-fr">
+                                <form class="am-form tpl-form-line-form" action="/xcg/add">
+                                    <div class="am-form-group">
+                                        <label for="qpl" class="am-u-sm-3 am-form-label">巯嘌呤</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="qpl" name="qpl" placeholder="请输入数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="kpl" class="am-u-sm-3 am-form-label">开浦兰</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="kpl" name="kpl" placeholder="请输入数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="ffjec" class="am-u-sm-3 am-form-label">复方甲恶唑（大药片）</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="ffjec" name="ffjec" placeholder="请输入数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="dsms" class="am-u-sm-3 am-form-label">地塞米松</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" required="required" class="tpl-form-input tpl-form-no-bg" id="dsms" name="dsms" placeholder="请输入数量">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="fydate" class="am-u-sm-3 am-form-label">服药日期 </label>
+                                        <div class="am-u-sm-9">
+                                            <input id="fydate" name="createDate" type="text" class="am-form-field" placeholder="日历组件" data-am-datepicker readonly required />
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/amazeui.datatables.min.js"></script>
+    <script src="assets/js/dataTables.responsive.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

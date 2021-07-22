@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caojing.xuechanggui.dao.XcgMapper">
+    <resultMap id="BaseResultMap" type="com.caojing.xuechanggui.pojo.Xcg">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="bxb" jdbcType="DOUBLE" property="bxb" />
+        <result column="hxb" jdbcType="DOUBLE" property="hxb" />
+        <result column="xhdb" jdbcType="DOUBLE" property="xhdb" />
+        <result column="xxb" jdbcType="DOUBLE" property="xxb" />
+        <result column="zxjdz" jdbcType="DOUBLE" property="zxjdz" />
+        <result column="lbjdz" jdbcType="DOUBLE" property="lbjdz" />
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, bxb,hxb,xhdb,xxb,zxjdz,lbjdz,create_date as createDate
+  </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.caojing.xuechanggui.po.XcgResponse">
+        select
+        <include refid="Base_Column_List" />
+        from xcg
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+
+    <select id="selectAllForTable" parameterType="com.caojing.xuechanggui.qo.XcgTableRequest" resultType="com.caojing.xuechanggui.po.XcgResponse">
+        select
+        <include refid="Base_Column_List" />
+        from xcg where 1=1
+        <if test="tableAstart != null and tableAstart != ''">
+            and create_date <![CDATA[ >= ]]> #{tableAstart,jdbcType=TIMESTAMP}
+        </if>
+        <if test="tableAend != null and tableAend != ''">
+            and create_date <![CDATA[ <= ]]> #{tableAend,jdbcType=TIMESTAMP}
+        </if>
+        <if test="tableBstart != null and tableBstart != ''">
+            and create_date <![CDATA[ >= ]]> #{tableBstart,jdbcType=TIMESTAMP}
+        </if>
+        <if test="tableBend != null and tableBend != ''">
+            and create_date <![CDATA[ <= ]]> #{tableBend,jdbcType=TIMESTAMP}
+        </if>
+        order by create_date
+    </select>
+
+    <select id="selectAllForTableList" parameterType="com.caojing.xuechanggui.qo.XcgTableListRequest" resultType="com.caojing.xuechanggui.po.XcgResponse">
+        select
+        <include refid="Base_Column_List" />
+        from xcg where 1=1
+        <if test="start != null and start != ''">
+            and create_date <![CDATA[ >= ]]> #{start,jdbcType=TIMESTAMP}
+        </if>
+        <if test="end != null and end != ''">
+            and create_date <![CDATA[ <= ]]> #{end,jdbcType=TIMESTAMP}
+        </if>
+        order by create_date
+    </select>
+    <insert id="insert" parameterType="com.caojing.xuechanggui.pojo.Xcg">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into xcg (bxb,hxb,xhdb,xxb,zxjdz,lbjdz,create_date)
+        values (
+        #{bxb,jdbcType=DOUBLE},
+        #{hxb,jdbcType=DOUBLE},
+        #{xhdb,jdbcType=DOUBLE},
+        #{xxb,jdbcType=DOUBLE},
+        #{zxjdz,jdbcType=DOUBLE},
+        #{lbjdz,jdbcType=DOUBLE},
+         #{createDate,jdbcType=TIMESTAMP})
+    </insert>
+
+</mapper>

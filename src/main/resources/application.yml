@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    mode: HTML5
+    suffix: .html
+    prefix: classpath:/templates/
+  redis:
+    host: 106.13.181.70
+    port: 6379
+    password: mm8023ak
+  datasource:
+    url: jdbc:mysql://106.13.181.70:3306/jj
+    username: root
+    password: 123456!
+  web:
+    resources:
+      static-locations: classpath:/templates/assets/
+  mvc:
+    static-path-pattern: /assets/**
+mybatis:
+  mapper-locations:
+    - classpath*:com/caojing/xuechanggui/mapper/*.xml
